@@ -13,12 +13,12 @@ async function seedAdmin() {
   }
 
   const [existing] = await pool.execute(
-    "SELECT id_usuario FROM usuarios WHERE email = ?",
+    'SELECT id_usuario FROM usuarios WHERE email = ?',
     [email],
   );
 
   if (existing.length) {
-    console.log("Seed de admin omitido: ya existe un usuario con ese email");
+    console.log('Seed de admin omitido: ya existe un usuario con ese email');
     return;
   }
 
